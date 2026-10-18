@@ -1,0 +1,31 @@
+# Python virtual environments
+.venv/
+.venv_baru/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Temporary installation files
+pip_temp/
+*.tmp
+*.log
+
+# Generated application data
+data/library.json
+data/uploads/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Editor and operating system
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

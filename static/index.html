@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#faf7f5" />
+  <meta name="description" content="KampusKita AI — platform edukasi eksperimental berbasis RAG untuk eksplorasi informasi akademik dengan sumber yang transparan." />
+  <title>KampusKita AI · Your cute academic companion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#home" data-nav="home" aria-label="KampusKita AI halaman utama">
+        <span class="brand-symbol" aria-hidden="true">✿</span>
+        <span class="brand-name">kampus<span>kita</span><small>AI SPACE</small></span>
+      </a>
+      <div class="sidebar-label">YOUR LITTLE SPACE</div>
+      <nav aria-label="Menu utama" class="nav-list">
+        <button class="nav-link active" data-view="home"><span class="nav-emoji">⌂</span> Overview <span class="nav-arrow">↗</span></button>
+        <button class="nav-link" data-view="chat"><span class="nav-emoji">✧</span> AI Study Buddy <span class="nav-count">NEW</span></button>
+        <button class="nav-link" data-view="library"><span class="nav-emoji">▤</span> Knowledge Library</button>
+        <button class="nav-link" data-view="lab"><span class="nav-emoji">❀</span> Learning Lab</button>
+        <button class="nav-link" data-view="research"><span class="nav-emoji">◇</span> Behind the Research</button>
+      </nav>
+      <div class="sidebar-label sidebar-label-second">MINI SHORTCUT</div>
+      <button class="quick-link" id="side-upload"><span class="quick-icon">＋</span> Upload your notes</button>
+      <button class="quick-link" id="side-example"><span class="quick-icon">✺</span> Try a sample question</button>
+      <div class="side-spacer"></div>
+      <div class="sidebar-note"><span class="cute-dots">✳</span><b>A little reminder</b><p>Stay curious. Every big idea starts with a little question! ♡</p><span class="note-flower">✿</span></div>
+      <div class="sidebar-bottom"><span class="avatar">LH</span><div><b>Lalu Ramdoni H.</b><small>Research & Learning Design</small></div><span class="online-dot" aria-label="Portfolio preview"></span></div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="breadcrumb"><button id="mobile-menu" aria-label="Buka menu">☰</button><span>My workspace</span><span class="slash">/</span><b id="breadcrumb-active">Overview</b></div>
+        <div class="topbar-actions"><span class="today-tag">✦ Learn something new today</span><a class="paper-top" href="/api/paper" target="_blank" rel="noopener">Research paper <span>↗</span></a><span class="little-avatar">LH</span></div>
+      </header>
+
+      <div class="page-frame">
+        <section class="view active" id="view-home" aria-labelledby="home-title">
+          <div class="eyebrow">✦ WELCOME TO YOUR HAPPY LEARNING SPACE</div>
+          <div class="hero">
+            <div class="hero-art" aria-hidden="true"><span class="art-sun">☀</span><span class="art-orbit orbit-one"></span><span class="art-orbit orbit-two"></span><div class="mascot"><span class="mascot-face"><i class="eye left"></i><i class="eye right"></i><i class="blush cheek-left"></i><i class="blush cheek-right"></i><i class="smile"></i></span></div><span class="spark spark1">✳</span><span class="spark spark2">✦</span><span class="art-pencil">✎</span></div>
+            <div class="hero-copy"><span class="hero-pill">✳ Your academic bestie is here!</span><h1 id="home-title">Big questions,<br><em>little magic.</em> <span class="heading-spark">✦</span></h1><p>Kenalan dengan <b>Mimo</b>, teman eksplorasi akademik yang membaca dokumenmu, mencari sumber yang relevan, dan membantumu belajar lebih percaya diri.</p><div class="hero-actions"><button class="btn btn-dark" data-jump="chat">Let's ask Mimo <span>↗</span></button><button class="btn btn-cream" data-jump="library">Explore documents <span>→</span></button></div></div>
+          </div>
+          <div class="section-heading"><div><span class="section-kicker">THE BIG PICTURE</span><h2>One cozy space, lots to explore <span>☁</span></h2></div><span class="small-muted">Built for curious minds</span></div>
+          <div class="feature-grid">
+            <button class="feature-card peach" data-jump="chat"><span class="feature-icon">✳</span><span class="feature-arrow">↗</span><h3>Ask anything,<br>get grounded answers.</h3><p>Chat with your documents and see where every answer comes from.</p><span class="card-label">AI STUDY BUDDY · 01</span></button>
+            <button class="feature-card lilac" data-jump="library"><span class="feature-icon">▥</span><span class="feature-arrow">↗</span><h3>Your notes,<br>beautifully organized.</h3><p>Upload PDF or text files and create your own little knowledge universe.</p><span class="card-label">KNOWLEDGE LIBRARY · 02</span></button>
+            <button class="feature-card mint" data-jump="lab"><span class="feature-icon">❋</span><span class="feature-arrow">↗</span><h3>Learn, try,<br>and remember.</h3><p>Practice what you've learned with a mini quiz grounded in the paper.</p><span class="card-label">LEARNING LAB · 03</span></button>
+          </div>
+          <div class="section-heading compact"><div><span class="section-kicker">HOW IT WORKS</span><h2>A little smarter, a lot clearer</h2></div></div>
+          <div class="workflow"><div class="flow-step"><span>01</span><b>Collect</b><small>Upload trusted documents</small></div><span class="flow-connector">→</span><div class="flow-step"><span>02</span><b>Retrieve</b><small>Find relevant text passages</small></div><span class="flow-connector">→</span><div class="flow-step"><span>03</span><b>Generate</b><small>Local Ollama AI explains</small></div><span class="flow-connector">→</span><div class="flow-step"><span>04</span><b>Verify</b><small>Check the source excerpts</small></div></div>
+          <div class="home-footnote"><span>♡</span> Inspired by a published academic RAG chatbot study — rebuilt as a web portfolio experience. <button data-jump="research">Read the story →</button></div>
+        </section>
+
+        <section class="view" id="view-chat" aria-labelledby="chat-title">
+          <div class="view-heading"><div><span class="section-kicker">STUDY TIME ✦</span><h1 id="chat-title">Ask Mimo <span class="handwriting">anything!</span></h1><p>A little curiosity goes a long way. Jawaban berdasarkan dokumen yang tersedia.</p></div><div class="mini-mascot">✿</div></div>
+          <div class="chat-shell">
+            <div class="chat-toolbar"><div class="chat-heading"><span class="chat-icon">✺</span><div><b>Mimo · Academic AI Assistant</b><small><span id="model-dot" class="status-dot"></span><span id="model-label">Checking local AI…</span></small></div></div><label class="mode-wrap" for="mode-select">Answer mode <select id="mode-select"><option value="auto">Auto (AI when ready)</option><option value="ai">Local AI</option><option value="demo">Document demo</option></select></label></div>
+            <div class="chat-messages" id="chat-messages" aria-live="polite"><div class="welcome-chat"><span class="welcome-mascot">✿</span><span class="starlet">✧</span><h2>Hii, I'm Mimo! <span>☀</span></h2><p>Aku bisa membantumu membaca isi paper, menjelaskan arsitektur RAG, dan menelusuri dokumen yang kamu unggah. Mau mulai dari mana?</p><div class="chips" id="starter-chips"></div></div></div>
+            <form class="chat-compose" id="chat-form"><div class="compose-inner"><label class="sr-only" for="message-input">Tulis pertanyaan</label><textarea id="message-input" rows="2" maxlength="1200" placeholder="Tanya tentang RAG, evaluasi chatbot, atau dokumenmu..." required></textarea><div class="compose-bottom"><span>✦ Answers are grounded in your documents</span><button id="send-btn" type="submit" class="send-button" aria-label="Kirim pertanyaan">↑</button></div></div><p class="composer-warning">Prototype portfolio · bukan layanan resmi kampus. Verifikasi informasi penting pada sumber resminya.</p></form>
+          </div>
+        </section>
+
+        <section class="view" id="view-library" aria-labelledby="library-title">
+          <div class="view-heading"><div><span class="section-kicker">YOUR PERSONAL BOOKSHELF</span><h1 id="library-title">Knowledge <span class="handwriting">Library.</span></h1><p>Add your notes, reference papers or learning materials. Mimo will read from this collection.</p></div><div class="mini-mascot books">▤</div></div>
+          <div class="upload-zone" id="drop-zone" tabindex="0" role="button" aria-label="Unggah dokumen PDF, TXT, atau MD"><input type="file" id="file-upload" accept=".pdf,.txt,.md" hidden/><span class="upload-cloud">☁ <i>↑</i></span><h2>Drop your knowledge here!</h2><p>Drag and drop a PDF, TXT or MD file, or <span class="upload-link">browse your files</span></p><small>Max 10 MB · PDF max 150 pages · local storage only</small></div>
+          <div class="upload-feedback" id="upload-feedback" hidden></div>
+          <div class="section-heading"><div><span class="section-kicker">SAVED IN YOUR LITTLE LIBRARY</span><h2>Your documents <span id="docs-count" class="count-pill">0</span></h2></div><button class="subtle-button" id="refresh-docs">↻ Refresh</button></div>
+          <div id="document-list" class="document-list"><div class="loading-box">Loading your documents...</div></div>
+          <div class="library-notice"><span>ⓘ</span><p><b>About your documents.</b> The original research article and a research summary are included. Some additional sample content is explicitly simulated, not official academic policy. Uploaded files remain on your computer.</p></div>
+        </section>
+
+        <section class="view" id="view-lab" aria-labelledby="lab-title">
+          <div class="view-heading"><div><span class="section-kicker">A LITTLE PRACTICE EVERY DAY</span><h1 id="lab-title">Learning <span class="handwriting">Lab.</span></h1><p>Let's turn research into something you can actually remember.</p></div><div class="mini-mascot minty">✳</div></div>
+          <div class="lab-intro"><div><span class="hero-pill">✿ QUICK LEARNING CHALLENGE</span><h2>Think you've got the RAG basics?</h2><p>Uji pemahamanmu lewat tiga pertanyaan yang disusun berdasarkan isi publikasi. Ini kuis kurasi, bukan generasi AI real-time.</p><button class="btn btn-dark" id="start-quiz">Start mini quiz ↗</button></div><div class="lab-doodle" aria-hidden="true">✎ <span>✧</span> ♡</div></div>
+          <div id="quiz-area" class="quiz-area" hidden></div>
+          <div class="section-heading compact"><div><span class="section-kicker">ANATOMY OF AN ANSWER</span><h2>How Mimo thinks (with sources)</h2></div></div>
+          <div class="learning-cards"><div><span>01 · DOCUMENT</span><h3>We read, not guess.</h3><p>Dokumen lokal disegmentasi menjadi potongan teks yang bisa ditelusuri.</p></div><div><span>02 · RETRIEVAL</span><h3>We find the context.</h3><p>Pencarian TF-IDF bawaan atau embedding semantik opsional memilih cuplikan paling relevan.</p></div><div><span>03 · GENERATION</span><h3>Then AI makes it clear.</h3><p>Ollama menyusun jawaban dari konteks dan menambahkan penanda sumber agar bisa diperiksa.</p></div></div>
+        </section>
+
+        <section class="view" id="view-research" aria-labelledby="research-title">
+          <div class="view-heading"><div><span class="section-kicker">THE SCIENCE BEHIND THE MAGIC</span><h1 id="research-title">Rooted in <span class="handwriting">research.</span></h1><p>From a published Telegram RAG chatbot to a modern portfolio-ready web experience.</p></div><div class="mini-mascot yellow">⌘</div></div>
+          <div class="paper-card"><div><span class="paper-eyebrow">PUBLISHED RESEARCH · JTIKA · MARCH 2025</span><h2>Optimalisasi Layanan Sistem Informasi Mahasiswa dengan Integrasi Telegram: Chatbot RAG berbasis LLM</h2><p>Lalu Ramdoni Hidayat · I Gede Pasek Suta Wijaya · Ramaditia Dwiyansaputra</p><a class="btn btn-dark" href="/api/paper" target="_blank" rel="noopener">Read original research ↗</a></div><span class="paper-ornament">✳</span></div>
+          <div class="section-heading"><div><span class="section-kicker">REPORTED IN THE STUDY</span><h2>What the paper actually found</h2></div></div>
+          <div class="stats-grid"><div><strong>≈ 40</strong><span>survey questions</span><small>Reported during needs analysis</small></div><div><strong>~ 60s</strong><span>response time</span><small>Reported prototype test; latency matters</small></div><div><strong>2</strong><span>evaluated QA examples</span><small>Both passed fuzzy string matching; not general accuracy</small></div></div>
+          <div class="research-block"><span class="section-kicker">THE ORIGINAL APPROACH</span><h2>Research architecture</h2><div class="research-path"><span>Academic PDF</span><i>→</i><span>SentenceSplitter</span><i>→</i><span>BGE embeddings</span><i>→</i><span>VectorStoreIndex</span><i>→</i><span>Zephyr-7B-beta</span><i>→</i><span>Telegram</span></div><p>Paper: node sekitar 128 token, tiga hasil retrieval teratas. Pengujian awal Llama 3 dan Qwen menjadi bahan evaluasi sebelum rancangan RAG.</p></div>
+          <div class="research-block alternate"><span class="section-kicker">THIS NEW PORTFOLIO BUILD</span><h2>Reimagined for the web</h2><p>Website ini implementasi ulang untuk portofolio: <b>FastAPI + HTML/CSS/JS + TF-IDF retrieval + Ollama LLM</b>. Jika dipilih, retrieval embedding semantik Ollama dapat diaktifkan. Ini bukan deployment aplikasi Telegram asli dan tidak terhubung ke SIAKAD.</p><div class="badge-row"><span>Grounded answers</span><span>PDF upload</span><span>Source excerpts</span><span>Local AI</span><span>Learning quiz</span></div></div>
+          <div class="citation-note"><b>Research integrity note ✍</b><p>Artikel melaporkan kecocokan 100% pada dua pertanyaan sampel dengan metrik kemiripan string. Hasil tersebut <b>tidak</b> boleh dipresentasikan sebagai akurasi model 100% pada seluruh pertanyaan atau pengujian eksternal.</p></div>
+        </section>
+      </div>
+    </main>
+
+    <aside class="rightbar"><div class="rightbar-inner"><div class="right-title">YOUR STUDY CORNER <span>✳</span></div>
+      <div class="mimo-card"><span class="mini-heart">♡</span><div class="mimo-illustration"><span class="mimo-head"><i></i><i></i><b></b></span></div><div class="mimo-greeting">Meet Mimo!</div><p>Your friendly study buddy, powered by your own documents.</p><button class="btn btn-dark stretch" data-jump="chat">Say hello ↗</button></div>
+      <div class="connection-card"><div class="right-section-heading">AI CONNECTION <span class="conn-pulse" id="connection-dot"></span></div><h3 id="connection-title">Checking Ollama…</h3><p id="connection-detail">Connecting to local model.</p><div class="data-row"><span>Knowledge chunks</span><b id="chunks-counter">—</b></div><div class="data-row"><span>Local documents</span><b id="docs-counter">—</b></div><button class="refresh-status" id="refresh-status">↻ Refresh status</button></div>
+      <div class="idea-card"><span>✦ QUICK IDEA</span><h3>Curiosity unlocked!</h3><p>Try asking “Bagaimana cara kerja RAG?” to see how document-grounded answers work.</p><button data-ask="Bagaimana cara kerja RAG dalam penelitian ini?">Try this question →</button></div>
+      <div class="footer-note">Made with ♡ and a love for learning<br>© 2026 · Research-inspired demo</div>
+    </div></aside>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>

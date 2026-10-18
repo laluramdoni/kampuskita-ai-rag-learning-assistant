@@ -1,0 +1,45 @@
+KAMPUSKITA AI — LEARNING DESIGN + AI ENGINEERING PORTFOLIO PROJECT
+=================================================================
+
+Project title:
+KampusKita AI — A Learner-Friendly, Document-Grounded Academic Assistant
+
+Research foundation:
+"Optimalisasi Layanan Sistem Informasi Mahasiswa dengan Integrasi Telegram:
+Chatbot Retrieval-Augmented-Generation berbasis Large Language Model."
+Authors: Lalu Ramdoni Hidayat, I Gede Pasek Suta Wijaya, Ramaditia Dwiyansaputra.
+JTIKA, Volume 7 Number 1, March 2025, pp. 121–131.
+
+Problem:
+Students often need clearer access to academic information. Long PDF
+documents can be inconvenient to browse, and users may not know where
+specific information is located. The original research explored RAG with
+Telegram to assist with document-grounded academic information retrieval.
+
+What I built in this new web version:
+- A responsive, learning-friendly interface designed around curiosity and clarity.
+- A document library that can ingest PDF, TXT, and Markdown files locally.
+- Document chunking, lexical retrieval using TF-IDF, and optional semantic
+  retrieval through local Ollama embeddings.
+- A working AI integration with a local Ollama chat model that generates
+  contextual explanations and displays supporting source excerpts.
+- An explicit non-generative demo fallback when the local model is unavailable.
+- A three-question, research-grounded interactive learning quiz.
+- A transparent comparison of the published approach and its web adaptation.
+
+My approach:
+1. Define the learner problem: finding useful details in research and course docs.
+2. Convert study findings into functional web features.
+3. Design a welcoming UI with clear navigation and helpful learning prompts.
+4. Build a retrieval workflow around local documents and traceable sources.
+5. Connect an on-device LLM; keep a transparent fallback when not available.
+6. Add a small learning assessment to illustrate instructional design thinking.
+7. Test upload, retrieval, frontend interaction, quiz, mobile layout and error cases.
+
+Research integrity:
+The study reported full string-similarity agreement on TWO example questions.
+This is not proof of 100% generalized real-world accuracy. The original
+research used BGE embeddings, VectorStoreIndex and Zephyr-7B-beta, with
+Telegram as its interface. This NEW web app uses FastAPI, TF-IDF retrieval,
+optional Ollama embeddings and Ollama text generation. Neither the website
+nor the paper establishes that the project is an official campus service.
